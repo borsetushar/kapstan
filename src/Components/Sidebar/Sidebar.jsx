@@ -11,26 +11,24 @@ const Sidebar = ({ onCollapse }) => {
   const toggleSidebar = () => {
     setCollapsed(!collapsed);
     onCollapse(!collapsed); // Call onCollapse function with the new collapsed state
-};
+  };
 
   return (
-    <div style={{ display: 'flex', height: '100vh' }}>
+    <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
       <Drawer
         variant="permanent"
         sx={{
-          width: collapsed ? '90px' : '220px',
+          height: '100%', // Set the height to fill the viewport
           flexShrink: 0,
           backgroundColor: '#37146B', // Background color
-          transition: 'width 0.3s ease', // Add transition effect
           '& .MuiDrawer-paper': {
-            width: collapsed ? '90px' : '220px',
+            height: '100%', // Set the height to fill the viewport
             backgroundColor: '#37146B', // Background color
-            transition: 'width 0.3s ease', // Add transition effect
-            boxSizing: 'border-box',
             color: 'white', // Text color
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
+            overflow: 'hidden' // Prevent content overflow
           },
           '& .MuiListItem-root:hover': {
             backgroundColor: 'rgba(255, 255, 255, 0.1)', // White color with opacity
@@ -43,40 +41,40 @@ const Sidebar = ({ onCollapse }) => {
           <div className="px-3 flex-grow-1">
             {/* Menu Items */}
             <List>
-                 {/* Kapstan Section */}
-          <ListItem button onClick={toggleSidebar} sx={{ justifyContent: 'flex-start' }}>
-            <ListItemIcon>
-              <PiCircleDashed style={{ color: 'white', marginLeft:'-10px' }} size={40} />
-            </ListItemIcon>
-            <ListItemText primary="Kapstan" primaryTypographyProps={{ style: { color: 'white', marginLeft: '10px' } }} />
-          </ListItem>
+              {/* Kapstan Section */}
+              <ListItem button onClick={toggleSidebar} sx={{ justifyContent: 'flex-start' }}>
+                <ListItemIcon>
+                  <PiCircleDashed style={{ color: 'white', marginLeft: '-10px' }} size={40} />
+                </ListItemIcon>
+                <ListItemText primary="Kapstan" primaryTypographyProps={{ style: { color: 'white', marginLeft: '10px' } }} />
+              </ListItem>
 
-          {/* Application Menu Section */}
-          <hr className=" my-2 border-white" />
-          <ListItem button sx={{ justifyContent: 'flex-start' }}>
-            <ListItemIcon>
-              <AiOutlineAppstore style={{ color: 'white' }} size={20} />
-            </ListItemIcon>
-            <ListItemText primary="Application" primaryTypographyProps={{ style: { color: 'white', marginLeft: '10px' } }} />
-          </ListItem>
+              {/* Application Menu Section */}
+              <hr className=" my-2 border-white" />
+              <ListItem button sx={{ justifyContent: 'flex-start' }}>
+                <ListItemIcon>
+                  <AiOutlineAppstore style={{ color: 'white' }} size={20} />
+                </ListItemIcon>
+                <ListItemText primary="Application" primaryTypographyProps={{ style: { color: 'white', marginLeft: '10px' } }} />
+              </ListItem>
 
-          {/* Divider */}
-          <hr className="my-2 border-white" />
+              {/* Divider */}
+              <hr className="my-2 border-white" />
               <ListItem button>
                 <ListItemIcon>
-                  <FaLink style={{ color: 'white' }} size={20}/>
+                  <FaLink style={{ color: 'white' }} size={20} />
                 </ListItemIcon>
                 <ListItemText primary="Connections" primaryTypographyProps={{ style: { color: 'white' } }} />
               </ListItem>
               <ListItem button>
                 <ListItemIcon>
-                  <FaMoneyBill style={{ color: 'white' }} size={20}/>
+                  <FaMoneyBill style={{ color: 'white' }} size={20} />
                 </ListItemIcon>
                 <ListItemText primary="Cost" primaryTypographyProps={{ style: { color: 'white' } }} />
               </ListItem>
               <ListItem button>
                 <ListItemIcon>
-                  <FaShieldAlt style={{ color: 'white' }} size={20}/>
+                  <FaShieldAlt style={{ color: 'white' }} size={20} />
                 </ListItemIcon>
                 <ListItemText primary="Security" primaryTypographyProps={{ style: { color: 'white' } }} />
               </ListItem>
@@ -89,28 +87,28 @@ const Sidebar = ({ onCollapse }) => {
           {/* Admin and Docs */}
         </List>
         <div className="px-3">
-            <List sx={{ marginTop: '180px' }}>
-              <ListItem button>
-                <ListItemIcon>
-                  <FaUserCog style={{ color: 'white' }} size={20}/>
-                </ListItemIcon>
-                <ListItemText primary="Admin" primaryTypographyProps={{ style: { color: 'white' } }} />
-              </ListItem>
-              <ListItem button>
-                <ListItemIcon>
-                  <FaFileAlt style={{ color: 'white' }} size={20}/>
-                </ListItemIcon>
-                <ListItemText primary="Docs" primaryTypographyProps={{ style: { color: 'white' } }} />
-              </ListItem>
-            </List>
-          </div>
-          <hr className="my-2 border-white" />
-          {/* Arrow to Collapse Sidebar */}
-          <div className="mt-auto px-3">
-            <IconButton onClick={toggleSidebar} >
-              {collapsed ? <MdKeyboardDoubleArrowRight size={20} style={{ color: 'white' }} /> : <MdKeyboardDoubleArrowLeft size={20} style={{ color: 'white' }} />}
-            </IconButton>
-          </div>
+          <List sx={{ marginTop: '180px' }}>
+            <ListItem button>
+              <ListItemIcon>
+                <FaUserCog style={{ color: 'white' }} size={20} />
+              </ListItemIcon>
+              <ListItemText primary="Admin" primaryTypographyProps={{ style: { color: 'white' } }} />
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon>
+                <FaFileAlt style={{ color: 'white' }} size={20} />
+              </ListItemIcon>
+              <ListItemText primary="Docs" primaryTypographyProps={{ style: { color: 'white' } }} />
+            </ListItem>
+          </List>
+        </div>
+        <hr className="my-2 border-white" />
+        {/* Arrow to Collapse Sidebar */}
+        <div className="mt-auto px-3">
+          <IconButton onClick={toggleSidebar} >
+            {collapsed ? <MdKeyboardDoubleArrowRight size={20} style={{ color: 'white' }} /> : <MdKeyboardDoubleArrowLeft size={20} style={{ color: 'white' }} />}
+          </IconButton>
+        </div>
       </Drawer>
     </div>
   );
