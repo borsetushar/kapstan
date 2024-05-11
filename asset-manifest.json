@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/kapstan/static/css/main.d9dec8e1.css",
-    "main.js": "/kapstan/static/js/main.2a66d7e5.js",
+    "main.js": "/kapstan/static/js/main.b7634e56.js",
     "index.html": "/kapstan/index.html",
     "main.d9dec8e1.css.map": "/kapstan/static/css/main.d9dec8e1.css.map",
-    "main.2a66d7e5.js.map": "/kapstan/static/js/main.2a66d7e5.js.map"
+    "main.b7634e56.js.map": "/kapstan/static/js/main.b7634e56.js.map"
   },
   "entrypoints": [
     "static/css/main.d9dec8e1.css",
-    "static/js/main.2a66d7e5.js"
+    "static/js/main.b7634e56.js"
   ]
 }
