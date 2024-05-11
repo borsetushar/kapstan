@@ -14,7 +14,7 @@ const Sidebar = ({ onCollapse }) => {
   };
 
   return (
-    <div style={{ display: 'flex', height: '100vh', overflowX: 'hidden' }}> {/* Add overflowX: 'hidden' to prevent horizontal scrolling */}
+    <div style={{ display: 'flex', height: '100vh', overflowY: 'hidden' }}> {/* Add overflowY: 'hidden' to prevent vertical scrolling */}
       <Drawer
         variant="permanent"
         sx={{
@@ -31,7 +31,7 @@ const Sidebar = ({ onCollapse }) => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            overflowX: 'hidden' // Prevent horizontal scrollbar on Drawer
+            overflowY: 'hidden', // Prevent vertical scrollbar on Drawer
           },
           '& .MuiListItem-root:hover': {
             backgroundColor: 'rgba(255, 255, 255, 0.1)', // White color with opacity
