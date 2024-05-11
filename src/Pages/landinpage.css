@@ -1,0 +1,24 @@
+.landing-page {
+    display: flex;
+    height: 100%;
+  }
+  
+  .sidebar {
+    flex: 0 0 auto; /* Sidebar won't grow or shrink */
+    width: 200px; /* Set sidebar width */
+    transition: width 0.3s ease; /* Add transition effect */
+  }
+  
+  .content {
+    flex: 1; /* Content will take remaining space */
+    transition: margin-left 0.3s ease; /* Add transition effect */
+  }
+  
+  .landing-page.collapsed .sidebar {
+    width: 50px; /* Collapsed sidebar width */
+  }
+  
+  .landing-page.collapsed .content {
+    margin-left: 0px; /* Adjust content margin to accommodate collapsed sidebar */
+  }
+  
